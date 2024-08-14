@@ -18,7 +18,7 @@ import type { ParsedQueryState } from "./types.ts";
  *
  * app.use(queryParser());
  *
- * app.get('/', (ctx: Context<ParsedQuery>) => {
+ * app.get('/endpoint', (ctx: Context<ParsedQuery>) => {
  *     const { parsedQuery } = ctx.state;
  *     console.log(parsedQuery);
  * });
