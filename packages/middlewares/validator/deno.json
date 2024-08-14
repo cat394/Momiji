@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "exports": "./mod.ts",
   "imports": {
-    "zod": "https://deno.land/x/zod@v3.23.8/mod.ts"
+    "data:zod": "https://deno.land/x/zod@v3.23.8/mod.ts"
   }
 }
