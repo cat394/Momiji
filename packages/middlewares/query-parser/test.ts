@@ -46,4 +46,17 @@ Deno.test("Query parser test", async (t) => {
       });
     },
   );
+
+  await t.step(
+    "if the query parameter does not exist, an empty object is returned.",
+    async () => {
+      const ctx = testing.createMockContext({
+        path: "/test",
+      }) as unknown as Context<ParsedQueryState>;
+
+      await queryParser()(ctx, mockNext);
+
+      assertEquals(ctx.state.parsedQuery, {});
+    },
+  );
 });
