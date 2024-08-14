@@ -1,4 +1,4 @@
-import type { ZodIssueCode } from "zod";
+import type { ZodIssueCode } from "../deps.ts";
 
 export type CreateParamErrorMessageArgs = {
   type?: ZodIssueCode;
