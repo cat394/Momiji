@@ -1,0 +1,8 @@
+{
+  "name": "@momiji/query-parser",
+  "version": "1.0.0",
+  "exports": "./mod.ts",
+  "imports": {
+    "query-string": "npm:query-string@^9.1.0"
+  }
+}
