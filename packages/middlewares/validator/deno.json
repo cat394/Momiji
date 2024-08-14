@@ -4,6 +4,7 @@
   "exports": "./mod.ts",
   "imports": {
     "@momiji/query-parser": "jsr:@momiji/query-parser@^1.0.0",
+    "@momiji/utility-types": "jsr:@momiji/utility-types@^1.0.0",
     "zod": "npm:zod@^3.23.8"
   }
 }
