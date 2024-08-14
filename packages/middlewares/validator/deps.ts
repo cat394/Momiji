@@ -6,7 +6,7 @@ import {
   type ZodObject,
   type ZodRawShape,
   type ZodSchema,
-} from "data:zod";
+} from "zod";
 import {
   Application,
   type Context,
