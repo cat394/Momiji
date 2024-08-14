@@ -14,7 +14,7 @@
   "workspace": [
     "./packages/middlewares/cors",
     "./packages/middlewares/query-parser",
-    "./packages/middlewares/zod-validator",
+    "./packages/middlewares/validator",
     "./packages/shared-test-tools",
     "./packages/utility-types"
   ]
