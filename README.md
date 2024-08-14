@@ -9,7 +9,7 @@ This is a library that provides practical middleware and types that make the
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | [cors](https://github.com/cat394/Momiji/tree/main/packages/middlewares/cors)                 | Cross-Origin Resource Sharing (CORS) support for Oak.            |
 | [query-parser](https://github.com/cat394/Momiji/tree/main/packages/middlewares/query-parser) | Creates a state by parsing the query parameters.                 |
-| [validator]                                                                                  | Validate the request body and query parameters using middleware. |
+| [validator](https://github.com/cat394/Momiji/tree/main/packages/middlewares/validator)                                                                                  | Validate the request body and query parameters using middleware. |
 
 We have also released
 [several modules](https://github.com/cat394/Momiji/tree/main/packages/utility-types)
