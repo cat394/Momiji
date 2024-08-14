@@ -1,11 +1,12 @@
 # Momiji - CORS middleware
 
 This is a middleware package for the [Oak](https://github.com/oakserver/oak) web
-framework. This provides CORS (*Cross-Origin Resource Sharing*) middleware for the
-[Oak](https://github.com/oakserver/oak) framework. This middleware sets the
+framework. This provides CORS (_Cross-Origin Resource Sharing_) middleware for
+the [Oak](https://github.com/oakserver/oak) framework. This middleware sets the
 appropriate CORS headers based on the provided options.
 
-For more information about CORS, see [MDN CORS page](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+For more information about CORS, see
+[MDN CORS page](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
 ## Installation
 
