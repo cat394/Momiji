@@ -1,6 +1,5 @@
 import queryString, { type ParseOptions } from "query-string";
-import type { Context, Middleware } from "@oak/oak";
-import { testing } from "@oak/testing";
+import { type Context, type Middleware, testing } from "@oak/oak";
 import { assertEquals } from "@std/assert";
 
 export {
