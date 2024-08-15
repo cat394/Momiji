@@ -1,14 +1,10 @@
-import type { CreateParamErrorMessageArgs } from "./types.ts";
-import type {
-  InvalidParamErrorMessage,
-  InvalidTypeErrorMessage,
-} from "../src/format-zod-error/types.ts";
+import type { ZodInvalidTypeIssue } from "../deps.ts";
 
-function t_createParamTypeErrorMessage({
+function t_createZodInvalidTypeIssue({
   path,
   expected,
   received,
-}: CreateParamErrorMessageArgs): InvalidTypeErrorMessage {
+}: Omit<ZodInvalidTypeIssue, "message" | "code">): ZodInvalidTypeIssue {
   return {
     code: "invalid_type",
     path,
@@ -18,11 +14,4 @@ function t_createParamTypeErrorMessage({
   };
 }
 
-function t_createParamError(details: InvalidParamErrorMessage[]) {
-  return {
-    message: "Invalid parameter error",
-    details,
-  };
-}
-
-export { t_createParamError, t_createParamTypeErrorMessage };
+export { t_createZodInvalidTypeIssue };

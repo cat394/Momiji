@@ -26,7 +26,8 @@
       "jsr:@std/testing@^1.0.0": "jsr:@std/testing@1.0.0",
       "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:path-to-regexp@6.2.1": "npm:path-to-regexp@6.2.1",
-      "npm:query-string@^9.1.0": "npm:query-string@9.1.0"
+      "npm:query-string@^9.1.0": "npm:query-string@9.1.0",
+      "npm:zod@^3.23.8": "npm:zod@3.23.8"
     },
     "jsr": {
       "@oak/commons@0.11.0": {
@@ -158,6 +159,10 @@
       },
       "split-on-first@3.0.0": {
         "integrity": "sha512-qxQJTx2ryR0Dw0ITYyekNQWpz6f8dGd7vffGNflQQ3Iqj9NJ6qiZ7ELpZsJ/QBhIVAiDfXdag3+Gp8RvWa62AA==",
+        "dependencies": {}
+      },
+      "zod@3.23.8": {
+        "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==",
         "dependencies": {}
       }
     }
@@ -309,6 +314,13 @@
       "packages/middlewares/query-parser": {
         "dependencies": [
           "npm:query-string@^9.1.0"
+        ]
+      },
+      "packages/middlewares/validator": {
+        "dependencies": [
+          "jsr:@momiji/query-parser@^1.0.0",
+          "jsr:@momiji/utility-types@^1.0.0",
+          "npm:zod@^3.23.8"
         ]
       }
     }

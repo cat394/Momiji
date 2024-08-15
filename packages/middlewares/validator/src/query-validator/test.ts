@@ -4,14 +4,13 @@ import {
   queryParser,
   Router,
   Status,
-  testing,
   z,
 } from "../../deps.ts";
 import type { ValidatedQueryState } from "./types.ts";
 import { validateQuery } from "./main.ts";
 import {
-  t_createParamError,
-  t_createParamTypeErrorMessage,
+  t_createApp,
+  t_createZodInvalidTypeIssue,
   t_zodErrorCatcher,
 } from "../../testing-helpers/index.ts";
 
@@ -50,7 +49,7 @@ function setup() {
 
 setup();
 
-const createRequest = testing.createApp(app);
+const createRequest = t_createApp(app);
 
 Deno.test("zodValidateQuery middleware test", async (t) => {
   await t.step("query is valid", async () => {
@@ -74,18 +73,18 @@ Deno.test("zodValidateQuery middleware test", async (t) => {
     const invalidSearchParams = "?p1=123&p2=false&p3=value3";
 
     const expectedErrorMessages = [
-      t_createParamTypeErrorMessage({
-        path: "p1",
+      t_createZodInvalidTypeIssue({
+        path: ["p1"],
         expected: "string",
         received: "number",
       }),
-      t_createParamTypeErrorMessage({
-        path: "p2",
+      t_createZodInvalidTypeIssue({
+        path: ["p2"],
         expected: "number",
         received: "boolean",
       }),
-      t_createParamTypeErrorMessage({
-        path: "p3",
+      t_createZodInvalidTypeIssue({
+        path: ["p3"],
         expected: "boolean",
         received: "string",
       }),
@@ -96,7 +95,7 @@ Deno.test("zodValidateQuery middleware test", async (t) => {
     await request
       .get(TEST_ENDPOINT + invalidSearchParams)
       .expect(Status.BadRequest)
-      .expect(t_createParamError(expectedErrorMessages));
+      .expect(expectedErrorMessages);
   });
 
   await t.step("query should be optional", async () => {
