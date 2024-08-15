@@ -1,5 +1,0 @@
-{
-  "name": "@scope/shared-test-tools",
-  "version": "1.0.0",
-  "exports": "./mod.ts"
-}
