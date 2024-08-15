@@ -1,6 +1,6 @@
 {
   "name": "@momiji/validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": "./mod.ts",
   "imports": {
     "@momiji/query-parser": "jsr:@momiji/query-parser@^1.0.0",
