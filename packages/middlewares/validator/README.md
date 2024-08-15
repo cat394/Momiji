@@ -1,8 +1,7 @@
 # Momiji Validator Middleware
 
 This is a middleware package for the [Oak](https://github.com/oakserver/oak) web
-framework. This designed to make handling validation, error formatting, and
-query parameter parsing easier and more efficient.
+framework.
 
 ## Features
 
