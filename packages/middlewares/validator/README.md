@@ -9,8 +9,6 @@ query parameter parsing easier and more efficient.
 - **Body Validation** Middleware for validating request bodies using Zod
   schemas.
 - **Query Parameter Validation** Middleware for validating query parameters.
-- **Error Formatting** Utility function for formatting Zod errors into more
-  readable messages.
 
 ## Installation
 
@@ -96,37 +94,6 @@ router.post(
 );
 ```
 
-## Utility Functions
-
-### `formatZodError`
-
-Formats a `ZodError` into a more readable array of error messages. This function
-converts the default error format provided by Zod into a structured array of
-objects, each containing the path of the error, a human-readable message, and
-additional details.
-
-```ts
-import { z } from "zod";
-import { formatZodError } from "@momiji/validator";
-
-const validator = z.object({
-  p1: z.string(),
-  p2: z.number(),
-});
-
-const result = validator.safeParse({ p1: 123, p2: "invalid" });
-
-if (!result.success) {
-  const errorMessages = formatZodError(result.error);
-  console.log(errorMessages);
-  // Output:
-  // [
-  //   { path: 'p1', message: 'Expected string, received number', code: 'invalid_type', expected: 'string', received: 'number' },
-  //   { path: 'p2', message: 'Expected number, received string', code: 'invalid_type', expected: 'number', received: 'string' }
-  // ]
-}
-```
-
 ## Error Handling
 
 If an error occurs during analysis of the body or query, the error will bubble
@@ -139,7 +106,7 @@ error classes inherit.
 
 ```ts
 import { Application, Status } from "@oak/oak";
-import { MomijiValidationError, MomijiInvalidBodyError, MomijiInvalidQueryError, formatZodError } from "@momiji/validator";
+import { MomijiValidationError, MomijiInvalidBodyError, MomijiInvalidQueryError } from "@momiji/validator";
 
 const app = new Application();
 
@@ -154,7 +121,7 @@ const errorHandling: Middleware = async (ctx, next) => {
         ctx.body.response = {
           message: 'Invalid body',
           details: {
-            validationResult: formatZodError(err.zodError);
+            validationResult: err.zodError;
           }
         }
       }
@@ -163,7 +130,7 @@ const errorHandling: Middleware = async (ctx, next) => {
         ctx.body.response = {
           message: 'Invalid query parameter',
           details: {
-            validationResult: formatZodError(err.zodError);
+            validationResult: err.zodError;
           }
         }
       }
