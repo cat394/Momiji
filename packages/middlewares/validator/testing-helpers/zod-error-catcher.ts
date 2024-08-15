@@ -7,7 +7,7 @@ export const t_zodErrorCatcher = (): Middleware => async (ctx, next) => {
   } catch (err) {
     if (err instanceof MomijiValidationError) {
       ctx.response.status = Status.BadRequest;
-      ctx.response.body = err.zodErrors;
+      ctx.response.body = err.zodErrors.issues;
     }
   }
 };
