@@ -70,7 +70,7 @@ type States = MergeStates<[ValidatedBody<[BodyValidator]>, ValidatedQuery<[Query
 
 router.post(
   '/endpoint',
-  async (ctx: Context<States>]) => {
+  async (ctx: Context<States>) => {
     const { validatedBody, validatedQuery }  = ctx.state;
     // validatedBody
     // { p1: string, p2: number }
