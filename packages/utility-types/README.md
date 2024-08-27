@@ -1,6 +1,6 @@
 # Momiji Utility Types
 
-This is a library that provides utility types to aid in type safety in
+This is a library containing useful utility types developed for
 [Oak](https://github.com/oakserver/oak).
 
 ## `MergeStates`
