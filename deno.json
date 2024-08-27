@@ -13,5 +13,6 @@
     "./packages/middlewares/query-parser",
     "./packages/middlewares/validator",
     "./packages/utility-types"
-  ]
+  ],
+  "license": "MIT"
 }
